@@ -1,4 +1,4 @@
-﻿USE DatabaseBanHang_17SE111;
+﻿USE DatabaseBanHang;
 GO 
 IF OBJECT_ID('TaiKhoan') IS NOT NULL
     BEGIN

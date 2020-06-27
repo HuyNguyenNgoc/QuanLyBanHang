@@ -1,4 +1,4 @@
-use DatabaseBanHang_17SE111
+use DatabaseBanHang
 GO
 create PROC PSH_NhaCungCap_Select
 as

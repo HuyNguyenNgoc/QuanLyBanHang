@@ -12,11 +12,19 @@ namespace QuanLyBanHang_17SE111.HeThong
     public class BLL_HeThong
     {
         Database data;
+
         public BLL_HeThong()
         {
             data = new Database();
         }
-
+        public bool KiemTraKetNoi(ref string err)
+        {
+            if (data == null)
+                return false;
+            if (!data.KiemTraKetNoi(ref err))
+                return false;
+            return true;
+        }
         public DataTable KiemTraDangNhap(ref string err,string tenDangNhap  ,string matKhau)
         {
             return data.GetDataTable(ref err, "PSP_NhanVien_KiemTraDangNhap", CommandType.StoredProcedure, 

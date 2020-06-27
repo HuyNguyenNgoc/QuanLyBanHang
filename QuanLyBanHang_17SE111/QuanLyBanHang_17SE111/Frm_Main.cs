@@ -1,5 +1,4 @@
 ﻿using QuanLyBanHang_17SE111.DanhMuc;
-using QuanLyBanHang_17SE111.DonViTinh;
 using QuanLyBanHang_17SE111.Help;
 using QuanLyBanHang_17SE111.HeThong;
 using QuanLyBanHang_17SE111.QuanLyBanHang;
@@ -30,7 +29,15 @@ namespace QuanLyBanHang_17SE111
             frm_DangNhap.ShowDialog();
             lblTenNhanVien.Text = Cls_Main.tenNhanVien;
             GioHeThong.Start();
-
+            data = new Database();
+            if (data.KiemTraKetNoi(ref err))
+            {
+                MessageBox.Show("Kết nối thành công", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Kết nối thất bại.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mnuDangXuat_Click(object sender, EventArgs e)
@@ -61,20 +68,6 @@ namespace QuanLyBanHang_17SE111
             frmNhapHang.ShowDialog();
         }
 
-        private void TsDonvitinh_Click(object sender, EventArgs e)
-        {
-            Frm_donViTinh_Main frm_DonViTinh = new Frm_donViTinh_Main();
-            frm_DonViTinh.MdiParent = this;
-            frm_DonViTinh.Show();
-
-        }
-
-        private void btnLoaiSanPham_Click(object sender, EventArgs e)
-        {
-            Frm_LoaiSanPham_Main frm_loaisanpham = new Frm_LoaiSanPham_Main();
-            frm_loaisanpham.MdiParent = this;
-            frm_loaisanpham.Show();
-        }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
@@ -97,14 +90,9 @@ namespace QuanLyBanHang_17SE111
 
         private void mnuBanhang_Click(object sender, EventArgs e)
         {
-            Frm_QuanLyBanHang_Main frm_qlybanhang = new Frm_QuanLyBanHang_Main();
-            frm_qlybanhang.MdiParent = this;
-            frm_qlybanhang.Show();
-        }
-
-        private void phânQuyềnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            Frm_BanHang banhang = new Frm_BanHang();
+            banhang.MdiParent = this;
+            banhang.Show();
         }
 
         private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,5 +130,10 @@ namespace QuanLyBanHang_17SE111
             frm_contact.ShowDialog();
         }
 
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_KhachHang kh = new Frm_KhachHang();
+            kh.ShowDialog();
+        }
     }
 }

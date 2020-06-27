@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
             this.btnNhapHang = new System.Windows.Forms.ToolStripButton();
@@ -45,10 +45,12 @@
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.txtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.btnASC = new System.Windows.Forms.ToolStripButton();
+            this.btnDoiGiaban = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblerr = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTongThanhTien = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvChiTietNhapHang = new System.Windows.Forms.DataGridView();
+            this.cboField = new System.Windows.Forms.ComboBox();
             this.colSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,16 +61,12 @@
             this.colSoLuongNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoLuongNhapTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaBanHienHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTienNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaLoaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboField = new System.Windows.Forms.ComboBox();
-            this.btnDoiGiaban = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhapHang)).BeginInit();
@@ -163,6 +161,7 @@
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(120, 28);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -175,6 +174,15 @@
             this.btnASC.Size = new System.Drawing.Size(59, 25);
             this.btnASC.Text = "ASC";
             this.btnASC.Click += new System.EventHandler(this.btnASC_Click);
+            // 
+            // btnDoiGiaban
+            // 
+            this.btnDoiGiaban.Image = global::QuanLyBanHang_17SE111.Properties.Resources.update_32px;
+            this.btnDoiGiaban.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDoiGiaban.Name = "btnDoiGiaban";
+            this.btnDoiGiaban.Size = new System.Drawing.Size(109, 25);
+            this.btnDoiGiaban.Text = "Đổi giá bán";
+            this.btnDoiGiaban.Click += new System.EventHandler(this.btnDoiGiaban_Click);
             // 
             // statusStrip1
             // 
@@ -198,24 +206,24 @@
             // lblTongThanhTien
             // 
             this.lblTongThanhTien.Name = "lblTongThanhTien";
-            this.lblTongThanhTien.Size = new System.Drawing.Size(123, 17);
+            this.lblTongThanhTien.Size = new System.Drawing.Size(122, 17);
             this.lblTongThanhTien.Text = "Tổng thành tiền : N/A";
             // 
             // dgvChiTietNhapHang
             // 
             this.dgvChiTietNhapHang.AllowUserToAddRows = false;
             this.dgvChiTietNhapHang.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvChiTietNhapHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvChiTietNhapHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChiTietNhapHang.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietNhapHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSTT,
@@ -228,8 +236,6 @@
             this.colSoLuongNhap,
             this.colSoLuongNhapTon,
             this.colGiaBanHienHanh,
-            this.colMaDonViTinh,
-            this.colTenDonViTinh,
             this.colDonGiaNhap,
             this.colThanhTienNhap,
             this.colMaLoaiSanPham,
@@ -246,6 +252,14 @@
             this.dgvChiTietNhapHang.Size = new System.Drawing.Size(1261, 306);
             this.dgvChiTietNhapHang.TabIndex = 2;
             this.dgvChiTietNhapHang.Click += new System.EventHandler(this.dgvChiTietNhapHang_Click);
+            // 
+            // cboField
+            // 
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(849, 2);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(121, 24);
+            this.cboField.TabIndex = 3;
             // 
             // colSTT
             // 
@@ -303,10 +317,10 @@
             // colSoLuongNhap
             // 
             this.colSoLuongNhap.DataPropertyName = "SoLuongNhap";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "#,###0";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.colSoLuongNhap.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "#,###0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.colSoLuongNhap.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSoLuongNhap.HeaderText = "SL";
             this.colSoLuongNhap.Name = "colSoLuongNhap";
             this.colSoLuongNhap.ReadOnly = true;
@@ -315,10 +329,10 @@
             // colSoLuongNhapTon
             // 
             this.colSoLuongNhapTon.DataPropertyName = "SoLuongNhapTon";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "#,###0";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.colSoLuongNhapTon.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "#,###0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.colSoLuongNhapTon.DefaultCellStyle = dataGridViewCellStyle4;
             this.colSoLuongNhapTon.HeaderText = "SLT";
             this.colSoLuongNhapTon.Name = "colSoLuongNhapTon";
             this.colSoLuongNhapTon.ReadOnly = true;
@@ -331,28 +345,13 @@
             this.colGiaBanHienHanh.Name = "colGiaBanHienHanh";
             this.colGiaBanHienHanh.ReadOnly = true;
             // 
-            // colMaDonViTinh
-            // 
-            this.colMaDonViTinh.DataPropertyName = "MaDonViTinh";
-            this.colMaDonViTinh.HeaderText = "ĐVT";
-            this.colMaDonViTinh.Name = "colMaDonViTinh";
-            this.colMaDonViTinh.ReadOnly = true;
-            this.colMaDonViTinh.Visible = false;
-            // 
-            // colTenDonViTinh
-            // 
-            this.colTenDonViTinh.DataPropertyName = "TenDonViTinh";
-            this.colTenDonViTinh.HeaderText = "ĐVT";
-            this.colTenDonViTinh.Name = "colTenDonViTinh";
-            this.colTenDonViTinh.ReadOnly = true;
-            // 
             // colDonGiaNhap
             // 
             this.colDonGiaNhap.DataPropertyName = "DonGiaNhap";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "#,###0";
-            dataGridViewCellStyle11.NullValue = "0";
-            this.colDonGiaNhap.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "#,###0";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.colDonGiaNhap.DefaultCellStyle = dataGridViewCellStyle5;
             this.colDonGiaNhap.HeaderText = "Đơn giá";
             this.colDonGiaNhap.Name = "colDonGiaNhap";
             this.colDonGiaNhap.ReadOnly = true;
@@ -360,10 +359,10 @@
             // colThanhTienNhap
             // 
             this.colThanhTienNhap.DataPropertyName = "ThanhTienNhap";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "#,###0";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.colThanhTienNhap.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "#,###0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.colThanhTienNhap.DefaultCellStyle = dataGridViewCellStyle6;
             this.colThanhTienNhap.HeaderText = "Thành tiền";
             this.colThanhTienNhap.Name = "colThanhTienNhap";
             this.colThanhTienNhap.ReadOnly = true;
@@ -398,23 +397,6 @@
             this.colTenNhaCungCap.HeaderText = "Nhà CC";
             this.colTenNhaCungCap.Name = "colTenNhaCungCap";
             this.colTenNhaCungCap.ReadOnly = true;
-            // 
-            // cboField
-            // 
-            this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(849, 2);
-            this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(121, 24);
-            this.cboField.TabIndex = 3;
-            // 
-            // btnDoiGiaban
-            // 
-            this.btnDoiGiaban.Image = global::QuanLyBanHang_17SE111.Properties.Resources.update_32px;
-            this.btnDoiGiaban.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDoiGiaban.Name = "btnDoiGiaban";
-            this.btnDoiGiaban.Size = new System.Drawing.Size(109, 25);
-            this.btnDoiGiaban.Text = "Đổi giá bán";
-            this.btnDoiGiaban.Click += new System.EventHandler(this.btnDoiGiaban_Click);
             // 
             // Frm_NhapHang_Main
             // 
@@ -460,6 +442,7 @@
         private System.Windows.Forms.ComboBox cboField;
         private System.Windows.Forms.ToolStripStatusLabel lblTongThanhTien;
         private System.Windows.Forms.ToolStripButton btnASC;
+        private System.Windows.Forms.ToolStripButton btnDoiGiaban;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhieuNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhap;
@@ -470,14 +453,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuongNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuongNhapTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaBanHienHanh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDonViTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenDonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGiaNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTienNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoaiSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNhaCungCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNhaCungCap;
-        private System.Windows.Forms.ToolStripButton btnDoiGiaban;
     }
 }

@@ -1,4 +1,4 @@
-use DatabaseBanHang_17SE111
+use DatabaseBanHang
 Go
 create PROC PSH_LoaiSanPham_Select
 as

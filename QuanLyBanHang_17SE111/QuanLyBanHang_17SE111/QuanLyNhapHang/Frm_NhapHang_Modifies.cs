@@ -29,7 +29,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             bd = new BLL_NhapHang();
             HienThicboLoaiSanPham();
             HienThicboNhaCungCap();
-            HienThicboDonViTinh();
             if (StatusTaoPhieu)//Thêm mới
             {
                 TaoMaPhieuNhap();
@@ -43,16 +42,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
           
         }
 
-        private void HienThicboDonViTinh()
-        {
-            DataTable dt = new DataTable();
-            dt = bd.LayDuLieuComboDonViTinh(ref err);
-            cboDonViTinh.DataSource = dt;
-            cboDonViTinh.DisplayMember = "TenDonViTinh";
-            cboDonViTinh.ValueMember = "MaDonViTinh";
-            cboDonViTinh.SelectedIndex = -1;
-            cboDonViTinh.Text = "Chọn Đơn vị tính";
-        }
 
         private void HienThicboNhaCungCap()
         {
@@ -145,7 +134,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                         if (item["TenSanPham"].ToString().Equals(txtTenSanPham.Text.Trim()))
                         {
                             txtMaSanPham.Text = item["MaSanPham"].ToString();
-                            cboDonViTinh.SelectedValue = item["MaDonViTinh"].ToString();
                             cboNhaCungCap.SelectedValue = item["MaNhaCungCap"].ToString();
                             txtDonGiaNhap.Text = item["DonGiaBinhQuan"].ToString();
                             txtDonGiaBan.Text = item["GiaBanHienHanh"].ToString();
@@ -223,8 +211,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             txtTenSanPham.ResetText();
             cboNhaCungCap.SelectedIndex = -1;
             cboNhaCungCap.Text = "Chọn nhà cung cấp";
-            cboDonViTinh.SelectedIndex = -1;
-            cboDonViTinh.Text = "Chọn đơn vị tính";
             txtSoLuongNhap.Text = "0";
             txtDonGiaNhap.Text = "0";
             txtDonGiaBan.Text = "0";
@@ -240,7 +226,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             nhapHang.TenSanPham = txtTenSanPham.Text;
             nhapHang.MoTa = "";
             nhapHang.MaLoaiSanPham = cboLoaiSanPham.SelectedValue.ToString();
-            nhapHang.MaDonViTinh = cboDonViTinh.SelectedValue.ToString();
             nhapHang.MaNhaCungCap = cboNhaCungCap.SelectedValue.ToString();
             nhapHang.SoLuongNhap = Convert.ToInt64(txtSoLuongNhap.Text);
             nhapHang.DonGiaNhap = Convert.ToInt64(txtDonGiaNhap.Text);
@@ -317,7 +302,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             {
                 txtMaSanPham.Text = nhapHang.MaSanPham;
                 cboLoaiSanPham.SelectedValue = nhapHang.MaLoaiSanPham;
-                cboDonViTinh.SelectedValue = nhapHang.MaDonViTinh;
                 cboNhaCungCap.SelectedValue = nhapHang.MaNhaCungCap;
                 txtTenSanPham.Text = nhapHang.TenSanPham;
                 txtSoLuongNhap.Text = nhapHang.SoLuongNhap.ToString();

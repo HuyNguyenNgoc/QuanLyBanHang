@@ -40,6 +40,23 @@ namespace QuanLyBanHang_17SE111
             connectionString = @"server= DESKTOP-68FP9AM\NGUYENHUY ;database = DatabaseBanHang; Integrated Security = true;";
             cnn = new SqlConnection(connectionString);
         }
+        public bool KiemTraKetNoi(ref string err)
+        {
+            try
+            {
+                cnn.Open();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
         public DataTable GetDataTable(ref string err, string sql, CommandType ct, params SqlParameter[] parameters)
         {
             DataTable table = null;

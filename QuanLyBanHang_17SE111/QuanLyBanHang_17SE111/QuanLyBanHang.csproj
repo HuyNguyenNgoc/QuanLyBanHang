@@ -34,6 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -50,27 +62,7 @@
   <ItemGroup>
     <Compile Include="Cls_Main.cs" />
     <Compile Include="DanhMuc\BLL_DanhMuc.cs" />
-    <Compile Include="DanhMuc\DTO_DonViTinh.cs" />
-    <Compile Include="DanhMuc\DTO_LoaiSanPham.cs" />
     <Compile Include="DanhMuc\DTO_NhaCungCap.cs" />
-    <Compile Include="DanhMuc\Frm_DonViTinh_Modifies.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\Frm_DonViTinh_Modifies.Designer.cs">
-      <DependentUpon>Frm_DonViTinh_Modifies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhMuc\Frm_LoaiSanPham_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\Frm_LoaiSanPham_Main.Designer.cs">
-      <DependentUpon>Frm_LoaiSanPham_Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhMuc\Frm_LoaisanPham_Modifies.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\Frm_LoaisanPham_Modifies.Designer.cs">
-      <DependentUpon>Frm_LoaisanPham_Modifies.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanhMuc\Frm_NhaCungCap_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,13 +76,15 @@
       <DependentUpon>Frm_NhaCungCap_Modifies.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="DanhMuc\Frm_donViTinh_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhMuc\Frm_donViTinh_Main.Designer.cs">
-      <DependentUpon>Frm_donViTinh_Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="HOADON.cs">
+      <DependentUpon>HOADON.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HOADON.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOADON.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login\Frm_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,11 +136,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyBanHang\Frm_QuanLyBanHang_Main.cs">
+    <Compile Include="QuanLyBanHang\BLL_BanHang.cs" />
+    <Compile Include="QuanLyBanHang\BLL_KhachHang.cs" />
+    <Compile Include="QuanLyBanHang\DTO_KhachHang.cs" />
+    <Compile Include="QuanLyBanHang\Frm_BanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyBanHang\Frm_QuanLyBanHang_Main.Designer.cs">
-      <DependentUpon>Frm_QuanLyBanHang_Main.cs</DependentUpon>
+    <Compile Include="QuanLyBanHang\Frm_BanHang.Designer.cs">
+      <DependentUpon>Frm_BanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBanHang\Frm_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyBanHang\Frm_KhachHang.Designer.cs">
+      <DependentUpon>Frm_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBanHang\Frm_KhachHang_Modified.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyBanHang\Frm_KhachHang_Modified.Designer.cs">
+      <DependentUpon>Frm_KhachHang_Modified.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNhapHang\BLL_NhapHang.cs" />
     <Compile Include="QuanLyNhapHang\DTO_NhapHang.cs" />
@@ -168,18 +177,12 @@
     <Compile Include="QuanLyNhapHang\Frm_QLGiaban_Main.Designer.cs">
       <DependentUpon>Frm_QLGiaban_Main.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DanhMuc\Frm_donViTinh_Main.resx">
-      <DependentUpon>Frm_donViTinh_Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\Frm_DonViTinh_Modifies.resx">
-      <DependentUpon>Frm_DonViTinh_Modifies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\Frm_LoaiSanPham_Main.resx">
-      <DependentUpon>Frm_LoaiSanPham_Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\Frm_LoaisanPham_Modifies.resx">
-      <DependentUpon>Frm_LoaisanPham_Modifies.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Report\Frm_HoaDon_rp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Frm_HoaDon_rp.Designer.cs">
+      <DependentUpon>Frm_HoaDon_rp.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DanhMuc\Frm_NhaCungCap_Main.resx">
       <DependentUpon>Frm_NhaCungCap_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,8 +223,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanLyBanHang\Frm_QuanLyBanHang_Main.resx">
-      <DependentUpon>Frm_QuanLyBanHang_Main.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyBanHang\Frm_BanHang.resx">
+      <DependentUpon>Frm_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyBanHang\Frm_KhachHang.resx">
+      <DependentUpon>Frm_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyBanHang\Frm_KhachHang_Modified.resx">
+      <DependentUpon>Frm_KhachHang_Modified.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhapHang\Frm_NhapHang_Main.resx">
       <DependentUpon>Frm_NhapHang_Main.cs</DependentUpon>
@@ -232,6 +241,18 @@
     <EmbeddedResource Include="QuanLyNhapHang\Frm_QLGiaban_Main.resx">
       <DependentUpon>Frm_QLGiaban_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HOADON.xsc">
+      <DependentUpon>HOADON.xsd</DependentUpon>
+    </None>
+    <None Include="HOADON.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOADON.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HOADON.xss">
+      <DependentUpon>HOADON.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

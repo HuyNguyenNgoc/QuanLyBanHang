@@ -19,12 +19,16 @@ namespace QuanLyBanHang_17SE111
         }
         BLL_HeThong bd;
         DataTable dataTable;
-        string err = string.Empty;
+        string err = string.Empty; 
+        Database data;
         private void Frm_DangNhap_Load(object sender, EventArgs e)
         {
             bd = new BLL_HeThong();
             txtTenDangNhap.Text = "admin";
             txtMatKhau.Text = "admin";
+          
+
+
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
