@@ -76,12 +76,6 @@ namespace QuanLyBanHang_17SE111
             frm_nhacungcap.Show();
         }
 
-        private void btnGiaban_Click(object sender, EventArgs e)
-        {
-            Frm_QLGiaban_Main frm_qlgiaban_main = new Frm_QLGiaban_Main();
-            frm_qlgiaban_main.MdiParent = this;
-            frm_qlgiaban_main.Show();
-        }
 
         private void mnuThoat_Click(object sender, EventArgs e)
         {

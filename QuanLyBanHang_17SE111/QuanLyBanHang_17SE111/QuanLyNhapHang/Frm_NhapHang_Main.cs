@@ -207,14 +207,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             }
           
         }
-
-        private void btnDoiGiaban_Click(object sender, EventArgs e)
-        {
-            Frm_QLGiaban_Main thayDoiGia = new Frm_QLGiaban_Main();
-            thayDoiGia.tenSanPham = this.tenSanPham;
-            thayDoiGia.ShowDialog();
-            HienThiDuLieu();
-        }
         
     }
 }

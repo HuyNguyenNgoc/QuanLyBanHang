@@ -77,14 +77,6 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="DTO\NhanVien.cs" />
-    <Compile Include="HOADON.cs">
-      <DependentUpon>HOADON.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HOADON.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HOADON.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Login\Frm_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +163,6 @@
     <Compile Include="QuanLyNhapHang\Frm_NhapHang_Modifies.Designer.cs">
       <DependentUpon>Frm_NhapHang_Modifies.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyNhapHang\Frm_QLGiaban_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNhapHang\Frm_QLGiaban_Main.Designer.cs">
-      <DependentUpon>Frm_QLGiaban_Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="Report\Frm_HoaDon_rp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,20 +224,6 @@
     <EmbeddedResource Include="QuanLyNhapHang\Frm_NhapHang_Modifies.resx">
       <DependentUpon>Frm_NhapHang_Modifies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNhapHang\Frm_QLGiaban_Main.resx">
-      <DependentUpon>Frm_QLGiaban_Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="HOADON.xsc">
-      <DependentUpon>HOADON.xsd</DependentUpon>
-    </None>
-    <None Include="HOADON.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HOADON.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="HOADON.xss">
-      <DependentUpon>HOADON.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

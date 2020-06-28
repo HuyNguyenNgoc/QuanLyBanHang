@@ -27,7 +27,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
         private void Frm_NhapHang_Modifies_Load(object sender, EventArgs e)
         {
             bd = new BLL_NhapHang();
-            HienThicboLoaiSanPham();
             HienThicboNhaCungCap();
             if (StatusTaoPhieu)//Thêm mới
             {
@@ -54,18 +53,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             cboNhaCungCap.Text = "Chọn Nhà cung cấp";
         }
         bool statusLoadboLoaiSanPham = false;
-        private void HienThicboLoaiSanPham()
-        {
-            statusLoadboLoaiSanPham = false;
-            DataTable dt = new DataTable();
-            dt = bd.LayDuLieuComboLoaiSanPham(ref err);
-            cboLoaiSanPham.DataSource = dt;
-            cboLoaiSanPham.DisplayMember = "TenLoaiSanPham";
-            cboLoaiSanPham.ValueMember = "MaLoaiSanPham";
-            cboLoaiSanPham.SelectedIndex = -1;
-            cboLoaiSanPham.Text = "Chọn loại sản phẩm";
-            statusLoadboLoaiSanPham = true;
-        }
 
         private void TaoMaPhieuNhap()
         {
@@ -107,44 +94,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 TaoMaPhieuNhap(dtpNgayNhap.Value);
         }
         DataTable dtSanPham;
-        private void cboLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboLoaiSanPham.SelectedIndex >= 0 && statusLoadboLoaiSanPham == true)
-            {
-                dtSanPham = new DataTable();
-                dtSanPham = bd.LayDanhSachSanPhamTheoLoai(ref err, cboLoaiSanPham.SelectedValue.ToString());
-                AutoCompleteStringCollection list = new AutoCompleteStringCollection();
-                for (int i = 0; i < dtSanPham.Rows.Count; i++)
-                {
-                    list.Add(dtSanPham.Rows[i]["TenSanPham"].ToString());
-                }
-                txtTenSanPham.AutoCompleteCustomSource = list;
-                txtTenSanPham.AutoCompleteMode = AutoCompleteMode.Suggest;
-            }
-        }
-
-        private void txtTenSanPham_Leave(object sender, EventArgs e)
-        {
-            if (statusUpdate == false)
-            {
-                if (!string.IsNullOrEmpty(txtTenSanPham.Text.Trim()))
-                {
-                    foreach (DataRow item in dtSanPham.Rows)
-                    {
-                        if (item["TenSanPham"].ToString().Equals(txtTenSanPham.Text.Trim()))
-                        {
-                            txtMaSanPham.Text = item["MaSanPham"].ToString();
-                            cboNhaCungCap.SelectedValue = item["MaNhaCungCap"].ToString();
-                            txtDonGiaNhap.Text = item["DonGiaBinhQuan"].ToString();
-                            txtDonGiaBan.Text = item["GiaBanHienHanh"].ToString();
-                            return;
-                        }
-                    }
-                }
-                txtDonGiaBan.Enabled = false;
-                txtMaSanPham.Text = "0";
-            }
-        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -158,8 +107,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             {
                 if (!string.IsNullOrEmpty(txtSoLuongNhap.Text))
                 {
-                    if (cboLoaiSanPham.SelectedIndex >= 0)
-                    {
                         //Lấy dữ liệu cho đối tượng DTO_NhapHang
                         LayDuLieuNhapHang();
                         if (nhapHang != null)
@@ -187,11 +134,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                             MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Chưa chọn loại sản phẩm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
+                
                 else
                 {
                     MessageBox.Show("Chưa nhập Số lượng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -225,7 +168,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             nhapHang.MaSanPham = txtMaSanPham.Text;
             nhapHang.TenSanPham = txtTenSanPham.Text;
             nhapHang.MoTa = "";
-            nhapHang.MaLoaiSanPham = cboLoaiSanPham.SelectedValue.ToString();
             nhapHang.MaNhaCungCap = cboNhaCungCap.SelectedValue.ToString();
             nhapHang.SoLuongNhap = Convert.ToInt64(txtSoLuongNhap.Text);
             nhapHang.DonGiaNhap = Convert.ToInt64(txtDonGiaNhap.Text);
@@ -301,7 +243,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             if (nhapHang != null)
             {
                 txtMaSanPham.Text = nhapHang.MaSanPham;
-                cboLoaiSanPham.SelectedValue = nhapHang.MaLoaiSanPham;
                 cboNhaCungCap.SelectedValue = nhapHang.MaNhaCungCap;
                 txtTenSanPham.Text = nhapHang.TenSanPham;
                 txtSoLuongNhap.Text = nhapHang.SoLuongNhap.ToString();
@@ -316,8 +257,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             {
                 if (!string.IsNullOrEmpty(txtSoLuongNhap.Text))
                 {
-                    if (cboLoaiSanPham.SelectedIndex >= 0)
-                    {
+
                         //Lấy dữ liệu cho đối tượng DTO_NhapHang
                         LayDuLieuNhapHang();
                         if (nhapHang != null)
@@ -347,11 +287,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                         {
                             MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Chưa chọn loại sản phẩm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
                 }
                 else
                 {
@@ -431,5 +366,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             HienThiChiTietNhap(txtMaPhieuNhap.Text);
             txtTenSanPham.Focus();
         }
+
+
     }
 }

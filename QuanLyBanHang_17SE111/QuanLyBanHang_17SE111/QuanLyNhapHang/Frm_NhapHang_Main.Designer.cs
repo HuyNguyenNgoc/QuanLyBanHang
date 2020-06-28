@@ -182,7 +182,6 @@
             this.btnDoiGiaban.Name = "btnDoiGiaban";
             this.btnDoiGiaban.Size = new System.Drawing.Size(109, 25);
             this.btnDoiGiaban.Text = "Đổi giá bán";
-            this.btnDoiGiaban.Click += new System.EventHandler(this.btnDoiGiaban_Click);
             // 
             // statusStrip1
             // 

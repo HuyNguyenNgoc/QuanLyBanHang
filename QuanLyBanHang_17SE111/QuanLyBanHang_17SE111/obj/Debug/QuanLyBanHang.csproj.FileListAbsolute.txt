@@ -16,7 +16,6 @@ D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang_17
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang_17SE111.Properties.Resources.resources
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang_17SE111.QuanLyNhapHang.Frm_NhapHang_Main.resources
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang_17SE111.QuanLyNhapHang.Frm_NhapHang_Modifies.resources
-D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang_17SE111.QuanLyNhapHang.Frm_QLGiaban_Main.resources
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang.csproj.GenerateResource.cache
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang.csproj.CoreCompileInputs.cache
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang.csproj.CopyComplete

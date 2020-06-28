@@ -42,7 +42,6 @@
             this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChiTietNhap = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGiaban = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_taiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,7 +143,7 @@
             // 
             this.mnuBanhang.Image = ((System.Drawing.Image)(resources.GetObject("mnuBanhang.Image")));
             this.mnuBanhang.Name = "mnuBanhang";
-            this.mnuBanhang.Size = new System.Drawing.Size(180, 26);
+            this.mnuBanhang.Size = new System.Drawing.Size(161, 26);
             this.mnuBanhang.Text = "&Bán hàng";
             this.mnuBanhang.Click += new System.EventHandler(this.mnuBanhang_Click);
             // 
@@ -152,15 +151,14 @@
             // 
             this.kháchHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kháchHàngToolStripMenuItem.Image")));
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.kháchHàngToolStripMenuItem.Text = "&Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // qLNhậpHàngToolStripMenuItem
             // 
             this.qLNhậpHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuChiTietNhap,
-            this.btnGiaban});
+            this.mnuChiTietNhap});
             this.qLNhậpHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("qLNhậpHàngToolStripMenuItem.Image")));
             this.qLNhậpHàngToolStripMenuItem.Name = "qLNhậpHàngToolStripMenuItem";
             this.qLNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(170, 25);
@@ -170,17 +168,9 @@
             // 
             this.mnuChiTietNhap.Image = ((System.Drawing.Image)(resources.GetObject("mnuChiTietNhap.Image")));
             this.mnuChiTietNhap.Name = "mnuChiTietNhap";
-            this.mnuChiTietNhap.Size = new System.Drawing.Size(189, 26);
+            this.mnuChiTietNhap.Size = new System.Drawing.Size(180, 26);
             this.mnuChiTietNhap.Text = "&Chi tiết nhập";
             this.mnuChiTietNhap.Click += new System.EventHandler(this.mnuChiTietNhap_Click);
-            // 
-            // btnGiaban
-            // 
-            this.btnGiaban.Image = ((System.Drawing.Image)(resources.GetObject("btnGiaban.Image")));
-            this.btnGiaban.Name = "btnGiaban";
-            this.btnGiaban.Size = new System.Drawing.Size(189, 26);
-            this.btnGiaban.Text = "&Quản lý giá bán";
-            this.btnGiaban.Click += new System.EventHandler(this.btnGiaban_Click);
             // 
             // administratorToolStripMenuItem
             // 
@@ -330,7 +320,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblTenNhanVien;
         private System.Windows.Forms.ToolStripMenuItem btnNhaCungCap;
         private System.Windows.Forms.ToolStripMenuItem mnuChiTietNhap;
-        private System.Windows.Forms.ToolStripMenuItem btnGiaban;
         private System.Windows.Forms.ToolStripMenuItem mnuBanhang;
         private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnu_taiKhoan;
