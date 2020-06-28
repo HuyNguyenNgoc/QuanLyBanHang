@@ -113,5 +113,10 @@ namespace QuanLyBanHang_17SE111.HeThong
                 // MessageBox.Show("Export Thành công");
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

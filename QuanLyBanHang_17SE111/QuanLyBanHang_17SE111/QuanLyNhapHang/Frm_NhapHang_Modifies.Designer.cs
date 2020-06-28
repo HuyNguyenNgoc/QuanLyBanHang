@@ -74,7 +74,6 @@
             this.colGiaBanHienHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTienNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaLoaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,7 +136,7 @@
             this.btnSua.Location = new System.Drawing.Point(162, 203);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 22;
+            this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -148,7 +147,7 @@
             this.btnXoa.Location = new System.Drawing.Point(243, 203);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 21;
+            this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -158,7 +157,7 @@
             this.btnThem.Location = new System.Drawing.Point(81, 203);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 20;
+            this.btnThem.TabIndex = 9;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -168,6 +167,7 @@
             this.cboNhaCungCap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboNhaCungCap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboNhaCungCap.FormattingEnabled = true;
+            this.cboNhaCungCap.ItemHeight = 13;
             this.cboNhaCungCap.Location = new System.Drawing.Point(100, 153);
             this.cboNhaCungCap.Name = "cboNhaCungCap";
             this.cboNhaCungCap.Size = new System.Drawing.Size(283, 21);
@@ -205,7 +205,7 @@
             this.txtDonGiaBan.Location = new System.Drawing.Point(279, 121);
             this.txtDonGiaBan.Name = "txtDonGiaBan";
             this.txtDonGiaBan.Size = new System.Drawing.Size(103, 20);
-            this.txtDonGiaBan.TabIndex = 16;
+            this.txtDonGiaBan.TabIndex = 7;
             this.txtDonGiaBan.Text = "0";
             // 
             // txtDonGiaNhap
@@ -213,7 +213,7 @@
             this.txtDonGiaNhap.Location = new System.Drawing.Point(279, 95);
             this.txtDonGiaNhap.Name = "txtDonGiaNhap";
             this.txtDonGiaNhap.Size = new System.Drawing.Size(103, 20);
-            this.txtDonGiaNhap.TabIndex = 16;
+            this.txtDonGiaNhap.TabIndex = 6;
             this.txtDonGiaNhap.Text = "0";
             // 
             // label8
@@ -240,7 +240,7 @@
             this.txtSoLuongNhap.Location = new System.Drawing.Point(96, 95);
             this.txtSoLuongNhap.Name = "txtSoLuongNhap";
             this.txtSoLuongNhap.Size = new System.Drawing.Size(103, 35);
-            this.txtSoLuongNhap.TabIndex = 11;
+            this.txtSoLuongNhap.TabIndex = 5;
             this.txtSoLuongNhap.Text = "0";
             // 
             // txtTenSanPham
@@ -250,7 +250,7 @@
             this.txtTenSanPham.Location = new System.Drawing.Point(99, 69);
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.Size = new System.Drawing.Size(280, 20);
-            this.txtTenSanPham.TabIndex = 10;
+            this.txtTenSanPham.TabIndex = 4;
             // 
             // txtMaSanPham
             // 
@@ -258,7 +258,7 @@
             this.txtMaSanPham.Location = new System.Drawing.Point(99, 43);
             this.txtMaSanPham.Name = "txtMaSanPham";
             this.txtMaSanPham.Size = new System.Drawing.Size(103, 20);
-            this.txtMaSanPham.TabIndex = 5;
+            this.txtMaSanPham.TabIndex = 3;
             // 
             // label3
             // 
@@ -275,7 +275,7 @@
             this.dtpNgayNhap.Location = new System.Drawing.Point(278, 17);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(101, 20);
-            this.dtpNgayNhap.TabIndex = 3;
+            this.dtpNgayNhap.TabIndex = 2;
             this.dtpNgayNhap.ValueChanged += new System.EventHandler(this.dtpNgayNhap_ValueChanged);
             // 
             // label2
@@ -371,7 +371,6 @@
             this.colGiaBanHienHanh,
             this.colDonGiaNhap,
             this.colThanhTienNhap,
-            this.colMaLoaiSanPham,
             this.colTenNhanVien,
             this.colMaNhaCungCap,
             this.colTenNhaCungCap});
@@ -484,13 +483,6 @@
             this.colThanhTienNhap.HeaderText = "Thành tiền";
             this.colThanhTienNhap.Name = "colThanhTienNhap";
             // 
-            // colMaLoaiSanPham
-            // 
-            this.colMaLoaiSanPham.DataPropertyName = "MaLoaiSanPham";
-            this.colMaLoaiSanPham.HeaderText = "MaLoaiSanPham";
-            this.colMaLoaiSanPham.Name = "colMaLoaiSanPham";
-            this.colMaLoaiSanPham.Visible = false;
-            // 
             // colTenNhanVien
             // 
             this.colTenNhanVien.DataPropertyName = "TenNhanVien";
@@ -576,7 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaBanHienHanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGiaNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTienNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoaiSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNhaCungCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNhaCungCap;

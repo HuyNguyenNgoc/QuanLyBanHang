@@ -22,11 +22,12 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
         DTO_NhapHang nhapHang;
         public string maPhieuNhap = string.Empty;
         public DateTime ngayNhap;
-     
+
         public bool StatusTaoPhieu = false;
         private void Frm_NhapHang_Modifies_Load(object sender, EventArgs e)
         {
             bd = new BLL_NhapHang();
+
             HienThicboNhaCungCap();
             if (StatusTaoPhieu)//Thêm mới
             {
@@ -38,7 +39,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 dtpNgayNhap.Value = ngayNhap;
                 HienThiChiTietNhap(maPhieuNhap);
             }
-          
+
         }
 
 
@@ -52,7 +53,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             cboNhaCungCap.SelectedIndex = -1;
             cboNhaCungCap.Text = "Chọn Nhà cung cấp";
         }
-        bool statusLoadboLoaiSanPham = false;
+
 
         private void TaoMaPhieuNhap()
         {
@@ -69,7 +70,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 this.Close();
             }
             txtMaPhieuNhap.Text = maPhieuNhap;
-            this.Text = string.Format("Form[NHẬP HÀNG][Mã phiếu nhập hiện tại : {0}]",maPhieuNhap);
+            this.Text = string.Format("Form[NHẬP HÀNG][Mã phiếu nhập hiện tại : {0}]", maPhieuNhap);
         }
         private void TaoMaPhieuNhap(DateTime ngayNhap)
         {
@@ -93,7 +94,10 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             if (StatusTaoPhieu)
                 TaoMaPhieuNhap(dtpNgayNhap.Value);
         }
-        DataTable dtSanPham;
+
+
+
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -107,22 +111,18 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             {
                 if (!string.IsNullOrEmpty(txtSoLuongNhap.Text))
                 {
-                        //Lấy dữ liệu cho đối tượng DTO_NhapHang
-                        LayDuLieuNhapHang();
-                        if (nhapHang != null)
+
+                    //Lấy dữ liệu cho đối tượng DTO_NhapHang
+                    LayDuLieuNhapHang();
+                    if (nhapHang != null)
+                    {
+                        if (bd.InserttChiTietPhieuNhap(ref err, ref count, nhapHang))
                         {
-                            if (bd.InserttChiTietPhieuNhap(ref err, ref count, nhapHang))
+                            if (count > 0)
                             {
-                                if (count > 0)
-                                {
-                                    //Load lại lưới
-                                    HienThiChiTietNhap(txtMaPhieuNhap.Text);
-                                    ResetControl();
-                                }
-                                else
-                                {
-                                    MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
+                                //Load lại lưới
+                                HienThiChiTietNhap(txtMaPhieuNhap.Text);
+                                ResetControl();
                             }
                             else
                             {
@@ -134,7 +134,13 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                             MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                
+
+
+                    else
+                    {
+                        MessageBox.Show("Chưa chọn loại sản phẩm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
                 else
                 {
                     MessageBox.Show("Chưa nhập Số lượng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -168,6 +174,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             nhapHang.MaSanPham = txtMaSanPham.Text;
             nhapHang.TenSanPham = txtTenSanPham.Text;
             nhapHang.MoTa = "";
+
             nhapHang.MaNhaCungCap = cboNhaCungCap.SelectedValue.ToString();
             nhapHang.SoLuongNhap = Convert.ToInt64(txtSoLuongNhap.Text);
             nhapHang.DonGiaNhap = Convert.ToInt64(txtDonGiaNhap.Text);
@@ -212,8 +219,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             nhapHang.MaSanPham = dgvChiTietNhapHang.CurrentRow.Cells["colMaSanPham"].Value.ToString();
             nhapHang.TenSanPham = dgvChiTietNhapHang.CurrentRow.Cells["colTenSanPham"].Value.ToString();
             nhapHang.MoTa = "";
-            nhapHang.MaLoaiSanPham = dgvChiTietNhapHang.CurrentRow.Cells["colMaLoaiSanPham"].Value.ToString();
-            nhapHang.MaDonViTinh = dgvChiTietNhapHang.CurrentRow.Cells["colMaDonViTinh"].Value.ToString();
             nhapHang.MaNhaCungCap = dgvChiTietNhapHang.CurrentRow.Cells["colMaNhaCungCap"].Value.ToString();
             nhapHang.SoLuongNhap = Convert.ToInt64(dgvChiTietNhapHang.CurrentRow.Cells["colSoLuongNhap"].Value.ToString());
             nhapHang.DonGiaNhap = Convert.ToInt64(dgvChiTietNhapHang.CurrentRow.Cells["colDonGiaNhap"].Value.ToString());
@@ -228,8 +233,6 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             nhapHang.MaSanPham = dgvChiTietNhapHang.Rows[index].Cells["colMaSanPham"].Value.ToString();
             nhapHang.TenSanPham = dgvChiTietNhapHang.Rows[index].Cells["colTenSanPham"].Value.ToString();
             nhapHang.MoTa = "";
-            nhapHang.MaLoaiSanPham = dgvChiTietNhapHang.Rows[index].Cells["colMaLoaiSanPham"].Value.ToString();
-            nhapHang.MaDonViTinh = dgvChiTietNhapHang.Rows[index].Cells["colMaDonViTinh"].Value.ToString();
             nhapHang.MaNhaCungCap = dgvChiTietNhapHang.Rows[index].Cells["colMaNhaCungCap"].Value.ToString();
             nhapHang.SoLuongNhap = Convert.ToInt64(dgvChiTietNhapHang.Rows[index].Cells["colSoLuongNhap"].Value.ToString());
             nhapHang.DonGiaNhap = Convert.ToInt64(dgvChiTietNhapHang.Rows[index].Cells["colDonGiaNhap"].Value.ToString());
@@ -258,25 +261,20 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 if (!string.IsNullOrEmpty(txtSoLuongNhap.Text))
                 {
 
-                        //Lấy dữ liệu cho đối tượng DTO_NhapHang
-                        LayDuLieuNhapHang();
-                        if (nhapHang != null)
+                    //Lấy dữ liệu cho đối tượng DTO_NhapHang
+                    LayDuLieuNhapHang();
+                    if (nhapHang != null)
+                    {
+                        if (bd.UpdateChiTietPhieuNhap(ref err, ref count, nhapHang))
                         {
-                            if (bd.UpdateChiTietPhieuNhap(ref err, ref count, nhapHang))
+                            if (count > 0)
                             {
-                                if (count > 0)
-                                {
-                                    //Load lại lưới
-                                    HienThiChiTietNhap(txtMaPhieuNhap.Text);
-                                    ResetControl();
-                                    btnXoa.Enabled = false;
-                                    btnSua.Enabled = false;
-                                    statusUpdate = false;
-                                }
-                                else
-                                {
-                                    MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
+                                //Load lại lưới
+                                HienThiChiTietNhap(txtMaPhieuNhap.Text);
+                                ResetControl();
+                                btnXoa.Enabled = false;
+                                btnSua.Enabled = false;
+                                statusUpdate = false;
                             }
                             else
                             {
@@ -287,15 +285,18 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                         {
                             MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show(string.Format("Sản phẩm không thêm được \n Lý do: {0}", err), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Chưa nhập Số lượng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Chưa nhập tên sản phẩm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Chưa nhập tên sản phẩm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -350,7 +351,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             statusUpdate = false;
-          
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -361,12 +362,10 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
             ResetControl();
-   
-            TaoMaPhieuNhap();   
+
+            TaoMaPhieuNhap();
             HienThiChiTietNhap(txtMaPhieuNhap.Text);
             txtTenSanPham.Focus();
         }
-
-
     }
 }

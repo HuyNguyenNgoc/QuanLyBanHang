@@ -22,4 +22,3 @@ D:\CSharp\QuanLyBanHang_17SE111\MyLibrary\obj\Debug\MyLibrary.pdb
 D:\CSharp\QuanLyBanHang_17SE111\MyLibrary\bin\Debug\MyLibrary.dll
 D:\CSharp\QuanLyBanHang_17SE111\MyLibrary\bin\Debug\MyLibrary.pdb
 D:\CSharp\QuanLyBanHang_17SE111\MyLibrary\obj\Debug\MyLibrary.csproj.ResolveComReference.cache
-D:\CSharp\QuanLyBanHang_17SE111\MyLibrary\obj\Debug\MyLibrary.csprojAssemblyReference.cache

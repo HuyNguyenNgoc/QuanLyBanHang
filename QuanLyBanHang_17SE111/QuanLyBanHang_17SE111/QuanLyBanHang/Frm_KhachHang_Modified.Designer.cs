@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.txtTenKh = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -91,14 +91,14 @@
             this.txtMaKH.Size = new System.Drawing.Size(224, 29);
             this.txtMaKH.TabIndex = 4;
             // 
-            // txtTenKh
+            // txtTenKH
             // 
-            this.txtTenKh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKh.Location = new System.Drawing.Point(393, 71);
-            this.txtTenKh.Multiline = true;
-            this.txtTenKh.Name = "txtTenKh";
-            this.txtTenKh.Size = new System.Drawing.Size(224, 29);
-            this.txtTenKh.TabIndex = 5;
+            this.txtTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.Location = new System.Drawing.Point(393, 71);
+            this.txtTenKH.Multiline = true;
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(224, 29);
+            this.txtTenKH.TabIndex = 5;
             // 
             // txtDiaChi
             // 
@@ -162,7 +162,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtDienThoai);
             this.Controls.Add(this.txtDiaChi);
-            this.Controls.Add(this.txtTenKh);
+            this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -184,7 +184,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaKH;
-        private System.Windows.Forms.TextBox txtTenKh;
+        private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtDienThoai;
         private System.Windows.Forms.Label lblTitle;

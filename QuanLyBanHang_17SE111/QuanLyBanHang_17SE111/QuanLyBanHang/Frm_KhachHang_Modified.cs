@@ -28,32 +28,30 @@ namespace QuanLyBanHang_17SE111.QuanLyBanHang
             if (Them)
             {
                 txtMaKH.Text = "";
-                txtTenKh.Focus();
+                txtTenKH.Focus();
             }
             else //sửa
             {
                 //view thông tin cần sửa
                 LayDuLieuVaoControl(khachHang);
-                txtTenKh.Focus();
             }
         }
 
         private void LayDuLieuVaoControl(DTO_KhachHang khachHang)
         {
             txtMaKH.Text = khachHang.MaKH;
-            txtTenKh.Text = khachHang.TenKH;
+            txtTenKH.Text = khachHang.TenKH;
             txtDiaChi.Text = khachHang.DiaChi;
             txtDienThoai.Text = khachHang.DienThoai;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtTenKh.Text))
+            if (!string.IsNullOrEmpty(txtTenKH.Text))
             {
                 LayThongTinKhachHangControl();
                 if (kh.CapNhatKhachHang(ref err, ref count, khachHang))
                 {
-                    MessageBox.Show("Thêm thành công", "Infor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
 
                 }
@@ -65,7 +63,7 @@ namespace QuanLyBanHang_17SE111.QuanLyBanHang
             else
             {
                 MessageBox.Show("Chưa nhập thành công");
-                txtTenKh.Focus();
+                txtTenKH.Focus();
             }
         }
 
@@ -73,9 +71,10 @@ namespace QuanLyBanHang_17SE111.QuanLyBanHang
         {
             khachHang = new DTO_KhachHang();
             khachHang.MaKH = txtMaKH.Text;
-            khachHang.TenKH = txtTenKh.Text;
+            khachHang.TenKH = txtTenKH.Text;
             khachHang.DiaChi = txtDiaChi.Text;
             khachHang.DienThoai = txtDienThoai.Text;
+            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

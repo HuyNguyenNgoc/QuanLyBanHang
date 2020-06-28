@@ -106,7 +106,7 @@ namespace QuanLyBanHang_17SE111.QuanLyBanHang
         private void btnSua_Click(object sender, EventArgs e)
         {
             Frm_KhachHang_Modified kh_modified = new Frm_KhachHang_Modified();
-            kh_modified.Them = true;
+            kh_modified.Them = false;
             kh_modified.khachHang = khachHang;
             kh_modified.ShowDialog();
             HienThiKhachHang();

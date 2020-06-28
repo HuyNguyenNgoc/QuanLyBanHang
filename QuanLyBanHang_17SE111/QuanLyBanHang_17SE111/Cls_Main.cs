@@ -15,7 +15,7 @@ namespace QuanLyBanHang_17SE111
         public static string tenNhanVien = string.Empty;
         public static string maTaiKhoan = string.Empty;
         public static string maNhanVien = string.Empty;
-
+        public static string maHoaDonHienTai = string.Empty;
         public static string DatabaseName = "DatabaseBanHang";
 
         //Method

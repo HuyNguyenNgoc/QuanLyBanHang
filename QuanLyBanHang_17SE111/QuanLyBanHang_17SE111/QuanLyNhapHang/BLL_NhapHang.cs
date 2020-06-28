@@ -65,7 +65,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 new SqlParameter("@SoLuongNhap", nhapHang.SoLuongNhap),
                 new SqlParameter("@DonGiaNhap", nhapHang.DonGiaNhap),
                 new SqlParameter("@MaNhaCungCap", nhapHang.MaNhaCungCap),
-                new SqlParameter("@DonGiaBan", nhapHang.GiaBanHienHanh));
+                   new SqlParameter("@DonGiaBan", nhapHang.GiaBanHienHanh));
         }
         public bool UpdateChiTietPhieuNhap(ref string err, ref int count, DTO_NhapHang nhapHang)
         {
@@ -79,7 +79,7 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 new SqlParameter("@SoLuongNhap", nhapHang.SoLuongNhap),
                 new SqlParameter("@DonGiaNhap", nhapHang.DonGiaNhap),
                 new SqlParameter("@MaNhaCungCap", nhapHang.MaNhaCungCap),
-                new SqlParameter("@GiaBanHienHanh", nhapHang.GiaBanHienHanh));
+                 new SqlParameter("@GiaBanHienHanh", nhapHang.GiaBanHienHanh));
         }
         public bool DeleteChiTietPhieuNhap(ref string err, ref int count, DTO_NhapHang nhapHang)
         {
@@ -98,6 +98,18 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
                 new SqlParameter("@MaPhieuNhap", maPhieuNhap));
         }
 
-        
+        #region Giá bán
+        public DataTable LayDanhSachSanPham(ref string err)
+        {
+            return data.GetDataTable(ref err, "PSH_LayDanhSachGiaBan", CommandType.StoredProcedure, null);
+        }
+        public bool ThayDoiGia(ref string err, string maSanPham, int donGiaHienHanh, DateTime ngayApDung)
+        {
+            return data.MyExcuteNonQuery(ref err, "PSH_Giaban_DoiGiaBan", CommandType.StoredProcedure,
+                new SqlParameter("@MaSanPham", maSanPham),
+                new SqlParameter("@GiaBanHienHanh", donGiaHienHanh),
+                new SqlParameter("@NgayApDung", ngayApDung));
+        }
+        #endregion
     }
 }

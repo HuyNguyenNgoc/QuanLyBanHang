@@ -28,10 +28,10 @@ namespace QuanLyBanHang_17SE111.QuanLyBanHang
         public bool CapNhatKhachHang(ref string err, ref int count, DTO_KhachHang khachHang)
         {
             return data.MyExcuteNonQuery(ref err, ref count, "PSH_KhachHang_InsertUpdate", CommandType.StoredProcedure, 
-                new SqlParameter("@MaKH",khachHang.MaKH),
+                new SqlParameter("@MaKH", khachHang.MaKH),
                 new SqlParameter("@TenKH", khachHang.TenKH),
                 new SqlParameter("@DiaChi", khachHang.DiaChi),
-                new SqlParameter("@SDT", khachHang.DienThoai));
+                new SqlParameter("@DienThoai", khachHang.DienThoai));
         }
     }
 }
