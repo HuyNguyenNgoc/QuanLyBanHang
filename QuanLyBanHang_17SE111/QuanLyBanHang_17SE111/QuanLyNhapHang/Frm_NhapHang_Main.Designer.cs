@@ -34,23 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NhapHang_Main));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.btnNhapHang = new System.Windows.Forms.ToolStripButton();
-            this.btnSuaPhieuNhap = new System.Windows.Forms.ToolStripButton();
-            this.btnXoaPhieuNhap = new System.Windows.Forms.ToolStripButton();
-            this.btnXuatExcel = new System.Windows.Forms.ToolStripButton();
-            this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.txtSearch = new System.Windows.Forms.ToolStripTextBox();
-            this.btnASC = new System.Windows.Forms.ToolStripButton();
-            this.btnDoiGiaban = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblerr = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTongThanhTien = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvChiTietNhapHang = new System.Windows.Forms.DataGridView();
-            this.cboField = new System.Windows.Forms.ComboBox();
             this.colSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +59,15 @@
             this.colTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboField = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.btnNhapHang = new System.Windows.Forms.ToolStripButton();
+            this.btnSuaPhieuNhap = new System.Windows.Forms.ToolStripButton();
+            this.btnXoaPhieuNhap = new System.Windows.Forms.ToolStripButton();
+            this.btnXuatExcel = new System.Windows.Forms.ToolStripButton();
+            this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.btnASC = new System.Windows.Forms.ToolStripButton();
+            this.btnReport = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhapHang)).BeginInit();
@@ -86,66 +87,12 @@
             this.toolStripComboBox1,
             this.txtSearch,
             this.btnASC,
-            this.btnDoiGiaban});
+            this.btnReport});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1261, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::QuanLyBanHang_17SE111.Properties.Resources.refresh_32px;
-            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(79, 25);
-            this.btnRefresh.Text = "Nạp lại";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnNhapHang
-            // 
-            this.btnNhapHang.Image = global::QuanLyBanHang_17SE111.Properties.Resources.add_new_32px;
-            this.btnNhapHang.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Size = new System.Drawing.Size(107, 25);
-            this.btnNhapHang.Text = "Nhập hàng";
-            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
-            // 
-            // btnSuaPhieuNhap
-            // 
-            this.btnSuaPhieuNhap.Image = global::QuanLyBanHang_17SE111.Properties.Resources.update_32px;
-            this.btnSuaPhieuNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSuaPhieuNhap.Name = "btnSuaPhieuNhap";
-            this.btnSuaPhieuNhap.Size = new System.Drawing.Size(138, 25);
-            this.btnSuaPhieuNhap.Text = "Sửa phiếu nhập";
-            this.btnSuaPhieuNhap.Click += new System.EventHandler(this.btnSuaPhieuNhap_Click);
-            // 
-            // btnXoaPhieuNhap
-            // 
-            this.btnXoaPhieuNhap.Image = global::QuanLyBanHang_17SE111.Properties.Resources.delete_bin_32px;
-            this.btnXoaPhieuNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnXoaPhieuNhap.Name = "btnXoaPhieuNhap";
-            this.btnXoaPhieuNhap.Size = new System.Drawing.Size(138, 25);
-            this.btnXoaPhieuNhap.Text = "Xóa phiếu nhập";
-            this.btnXoaPhieuNhap.Click += new System.EventHandler(this.btnXoaPhieuNhap_Click);
-            // 
-            // btnXuatExcel
-            // 
-            this.btnXuatExcel.Image = global::QuanLyBanHang_17SE111.Properties.Resources.microsoft_excel_32px;
-            this.btnXuatExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(99, 25);
-            this.btnXuatExcel.Text = "Xuất Excel";
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = global::QuanLyBanHang_17SE111.Properties.Resources.close_window_32px;
-            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(69, 25);
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // toolStripLabel1
             // 
@@ -165,23 +112,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(120, 28);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // btnASC
-            // 
-            this.btnASC.Image = global::QuanLyBanHang_17SE111.Properties.Resources.alphabetical_sorting_32px;
-            this.btnASC.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnASC.Name = "btnASC";
-            this.btnASC.Size = new System.Drawing.Size(59, 25);
-            this.btnASC.Text = "ASC";
-            this.btnASC.Click += new System.EventHandler(this.btnASC_Click);
-            // 
-            // btnDoiGiaban
-            // 
-            this.btnDoiGiaban.Image = global::QuanLyBanHang_17SE111.Properties.Resources.update_32px;
-            this.btnDoiGiaban.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDoiGiaban.Name = "btnDoiGiaban";
-            this.btnDoiGiaban.Size = new System.Drawing.Size(109, 25);
-            this.btnDoiGiaban.Text = "Đổi giá bán";
             // 
             // statusStrip1
             // 
@@ -251,14 +181,6 @@
             this.dgvChiTietNhapHang.Size = new System.Drawing.Size(1261, 306);
             this.dgvChiTietNhapHang.TabIndex = 2;
             this.dgvChiTietNhapHang.Click += new System.EventHandler(this.dgvChiTietNhapHang_Click);
-            // 
-            // cboField
-            // 
-            this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(849, 2);
-            this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(121, 24);
-            this.cboField.TabIndex = 3;
             // 
             // colSTT
             // 
@@ -397,6 +319,86 @@
             this.colTenNhaCungCap.Name = "colTenNhaCungCap";
             this.colTenNhaCungCap.ReadOnly = true;
             // 
+            // cboField
+            // 
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(849, 2);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(121, 24);
+            this.cboField.TabIndex = 3;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::QuanLyBanHang_17SE111.Properties.Resources.refresh_32px;
+            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(79, 25);
+            this.btnRefresh.Text = "Nạp lại";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnNhapHang
+            // 
+            this.btnNhapHang.Image = global::QuanLyBanHang_17SE111.Properties.Resources.add_new_32px;
+            this.btnNhapHang.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNhapHang.Name = "btnNhapHang";
+            this.btnNhapHang.Size = new System.Drawing.Size(107, 25);
+            this.btnNhapHang.Text = "Nhập hàng";
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
+            // 
+            // btnSuaPhieuNhap
+            // 
+            this.btnSuaPhieuNhap.Image = global::QuanLyBanHang_17SE111.Properties.Resources.update_32px;
+            this.btnSuaPhieuNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSuaPhieuNhap.Name = "btnSuaPhieuNhap";
+            this.btnSuaPhieuNhap.Size = new System.Drawing.Size(138, 25);
+            this.btnSuaPhieuNhap.Text = "Sửa phiếu nhập";
+            this.btnSuaPhieuNhap.Click += new System.EventHandler(this.btnSuaPhieuNhap_Click);
+            // 
+            // btnXoaPhieuNhap
+            // 
+            this.btnXoaPhieuNhap.Image = global::QuanLyBanHang_17SE111.Properties.Resources.delete_bin_32px;
+            this.btnXoaPhieuNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnXoaPhieuNhap.Name = "btnXoaPhieuNhap";
+            this.btnXoaPhieuNhap.Size = new System.Drawing.Size(138, 25);
+            this.btnXoaPhieuNhap.Text = "Xóa phiếu nhập";
+            this.btnXoaPhieuNhap.Click += new System.EventHandler(this.btnXoaPhieuNhap_Click);
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Image = global::QuanLyBanHang_17SE111.Properties.Resources.microsoft_excel_32px;
+            this.btnXuatExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(99, 25);
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = global::QuanLyBanHang_17SE111.Properties.Resources.close_window_32px;
+            this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(69, 25);
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnASC
+            // 
+            this.btnASC.Image = global::QuanLyBanHang_17SE111.Properties.Resources.alphabetical_sorting_32px;
+            this.btnASC.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnASC.Name = "btnASC";
+            this.btnASC.Size = new System.Drawing.Size(59, 25);
+            this.btnASC.Text = "ASC";
+            this.btnASC.Click += new System.EventHandler(this.btnASC_Click);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(77, 25);
+            this.btnReport.Text = "Report";
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // Frm_NhapHang_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -441,7 +443,6 @@
         private System.Windows.Forms.ComboBox cboField;
         private System.Windows.Forms.ToolStripStatusLabel lblTongThanhTien;
         private System.Windows.Forms.ToolStripButton btnASC;
-        private System.Windows.Forms.ToolStripButton btnDoiGiaban;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhieuNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhap;
@@ -458,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNhaCungCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNhaCungCap;
+        private System.Windows.Forms.ToolStripButton btnReport;
     }
 }

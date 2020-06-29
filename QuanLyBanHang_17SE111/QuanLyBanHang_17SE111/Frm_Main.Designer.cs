@@ -32,11 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSaoLuu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPhucHoi = new System.Windows.Forms.ToolStripMenuItem();
-            this.danhMụcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNhaCungCap = new System.Windows.Forms.ToolStripMenuItem();
             this.qLBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBanhang = new System.Windows.Forms.ToolStripMenuItem();
             this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +42,7 @@
             this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_taiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_about = new System.Windows.Forms.ToolStripMenuItem();
             this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +53,7 @@
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTimer = new System.Windows.Forms.ToolStripStatusLabel();
             this.GioHeThong = new System.Windows.Forms.Timer(this.components);
+            this.mnuNhaCungCap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +63,6 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
-            this.danhMụcToolStripMenuItem,
             this.qLBánHàngToolStripMenuItem,
             this.qLNhậpHàngToolStripMenuItem,
             this.administratorToolStripMenuItem,
@@ -80,7 +78,6 @@
             // hệThốngToolStripMenuItem
             // 
             this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDangXuat,
             this.mnuSaoLuu,
             this.mnuPhucHoi});
             this.hệThốngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hệThốngToolStripMenuItem.Image")));
@@ -88,19 +85,11 @@
             this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(102, 25);
             this.hệThốngToolStripMenuItem.Text = "&Hệ thống";
             // 
-            // mnuDangXuat
-            // 
-            this.mnuDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("mnuDangXuat.Image")));
-            this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(150, 26);
-            this.mnuDangXuat.Text = "&Đăng xuất";
-            this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
-            // 
             // mnuSaoLuu
             // 
             this.mnuSaoLuu.Image = ((System.Drawing.Image)(resources.GetObject("mnuSaoLuu.Image")));
             this.mnuSaoLuu.Name = "mnuSaoLuu";
-            this.mnuSaoLuu.Size = new System.Drawing.Size(150, 26);
+            this.mnuSaoLuu.Size = new System.Drawing.Size(140, 26);
             this.mnuSaoLuu.Text = "&Sao lưu";
             this.mnuSaoLuu.Click += new System.EventHandler(this.mnuSaoLuu_Click);
             // 
@@ -108,26 +97,9 @@
             // 
             this.mnuPhucHoi.Image = ((System.Drawing.Image)(resources.GetObject("mnuPhucHoi.Image")));
             this.mnuPhucHoi.Name = "mnuPhucHoi";
-            this.mnuPhucHoi.Size = new System.Drawing.Size(150, 26);
+            this.mnuPhucHoi.Size = new System.Drawing.Size(140, 26);
             this.mnuPhucHoi.Text = "&Phục hồi";
             this.mnuPhucHoi.Click += new System.EventHandler(this.mnuPhucHoi_Click);
-            // 
-            // danhMụcToolStripMenuItem
-            // 
-            this.danhMụcToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNhaCungCap});
-            this.danhMụcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcToolStripMenuItem.Image")));
-            this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
-            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(109, 25);
-            this.danhMụcToolStripMenuItem.Text = "&Danh mục";
-            // 
-            // btnNhaCungCap
-            // 
-            this.btnNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.Image")));
-            this.btnNhaCungCap.Name = "btnNhaCungCap";
-            this.btnNhaCungCap.Size = new System.Drawing.Size(180, 26);
-            this.btnNhaCungCap.Text = "&Nhà cung cấp";
-            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // qLBánHàngToolStripMenuItem
             // 
@@ -143,7 +115,7 @@
             // 
             this.mnuBanhang.Image = ((System.Drawing.Image)(resources.GetObject("mnuBanhang.Image")));
             this.mnuBanhang.Name = "mnuBanhang";
-            this.mnuBanhang.Size = new System.Drawing.Size(161, 26);
+            this.mnuBanhang.Size = new System.Drawing.Size(180, 26);
             this.mnuBanhang.Text = "&Bán hàng";
             this.mnuBanhang.Click += new System.EventHandler(this.mnuBanhang_Click);
             // 
@@ -151,14 +123,15 @@
             // 
             this.kháchHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kháchHàngToolStripMenuItem.Image")));
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.kháchHàngToolStripMenuItem.Text = "&Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // qLNhậpHàngToolStripMenuItem
             // 
             this.qLNhậpHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuChiTietNhap});
+            this.mnuChiTietNhap,
+            this.mnuNhaCungCap});
             this.qLNhậpHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("qLNhậpHàngToolStripMenuItem.Image")));
             this.qLNhậpHàngToolStripMenuItem.Name = "qLNhậpHàngToolStripMenuItem";
             this.qLNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(170, 25);
@@ -176,7 +149,8 @@
             // 
             this.administratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu_taiKhoan,
-            this.đổiMậtKhẩuToolStripMenuItem});
+            this.đổiMậtKhẩuToolStripMenuItem,
+            this.mnuDangXuat});
             this.administratorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("administratorToolStripMenuItem.Image")));
             this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
             this.administratorToolStripMenuItem.Size = new System.Drawing.Size(134, 25);
@@ -197,6 +171,14 @@
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "&Đổi mật khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            // 
+            // mnuDangXuat
+            // 
+            this.mnuDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("mnuDangXuat.Image")));
+            this.mnuDangXuat.Name = "mnuDangXuat";
+            this.mnuDangXuat.Size = new System.Drawing.Size(202, 26);
+            this.mnuDangXuat.Text = "&Đăng xuất";
+            this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -279,6 +261,14 @@
             this.GioHeThong.Interval = 1000;
             this.GioHeThong.Tick += new System.EventHandler(this.GioHeThong_Tick);
             // 
+            // mnuNhaCungCap
+            // 
+            this.mnuNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("mnuNhaCungCap.Image")));
+            this.mnuNhaCungCap.Name = "mnuNhaCungCap";
+            this.mnuNhaCungCap.Size = new System.Drawing.Size(180, 26);
+            this.mnuNhaCungCap.Text = "&Nhà cung cấp";
+            this.mnuNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -309,16 +299,13 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
         private System.Windows.Forms.ToolStripMenuItem mnuSaoLuu;
         private System.Windows.Forms.ToolStripMenuItem mnuPhucHoi;
-        private System.Windows.Forms.ToolStripMenuItem danhMụcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLNhậpHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLBánHàngToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblTenNhanVien;
-        private System.Windows.Forms.ToolStripMenuItem btnNhaCungCap;
         private System.Windows.Forms.ToolStripMenuItem mnuChiTietNhap;
         private System.Windows.Forms.ToolStripMenuItem mnuBanhang;
         private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
@@ -332,6 +319,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblTimer;
         private System.Windows.Forms.Timer GioHeThong;
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem mnuNhaCungCap;
     }
 }
 

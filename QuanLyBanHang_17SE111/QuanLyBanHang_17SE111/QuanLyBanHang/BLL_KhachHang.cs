@@ -25,7 +25,7 @@ namespace QuanLyBanHang_17SE111.QuanLyBanHang
             return data.MyExcuteNonQuery(ref err, ref count, "PSH_KhachHang_Delete", CommandType.StoredProcedure, 
                 new SqlParameter("@MaKH",maKH));
         }
-        public bool CapNhatKhachHang(ref string err, ref int count, DTO_KhachHang khachHang)
+        public bool  CapNhatKhachHang(ref string err, ref int count, DTO_KhachHang khachHang)
         {
             return data.MyExcuteNonQuery(ref err, ref count, "PSH_KhachHang_InsertUpdate", CommandType.StoredProcedure, 
                 new SqlParameter("@MaKH", khachHang.MaKH),

@@ -19,5 +19,9 @@ namespace QuanLyBanHang_17SE111.Report
         {
             return data.GetDataTable(ref err, "HoaDon_Rp", CommandType.StoredProcedure, null);
         }
+        public DataTable LayDuLieuReportNhaphang(ref string err)
+        {
+            return data.GetDataTable(ref err, "HoaDon_Nhap_Rp", CommandType.StoredProcedure, null);
+        }
     }
 }

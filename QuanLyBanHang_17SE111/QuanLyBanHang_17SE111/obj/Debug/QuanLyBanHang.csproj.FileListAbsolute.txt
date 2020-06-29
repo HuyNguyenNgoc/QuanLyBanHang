@@ -34,3 +34,4 @@ D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\bin\Debug\QuanLyBanHang.ex
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\bin\Debug\QuanLyBanHang.pdb
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang.exe
 D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang.pdb
+D:\CSharp\QuanLyBanHang_17SE111\QuanLyBanHang_17SE111\obj\Debug\QuanLyBanHang_17SE111.Report.Frm_NhapHangRp.resources

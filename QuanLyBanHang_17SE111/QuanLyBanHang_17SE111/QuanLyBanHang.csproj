@@ -76,10 +76,10 @@
       <DependentUpon>Frm_NhaCungCap_Modifies.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="DataSetHoaDon.cs">
+    <Compile Include="Report\DataSetHoaDon.cs">
       <DependentUpon>DataSetHoaDon.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetHoaDon.Designer.cs">
+    <Compile Include="Report\DataSetHoaDon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetHoaDon.xsd</DependentUpon>
@@ -172,17 +172,34 @@
       <DependentUpon>Frm_NhapHang_Modifies.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\BLL_HoaDon.cs" />
+    <Compile Include="Report\DataSetNhaphang.cs">
+      <DependentUpon>DataSetNhaphang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DataSetNhaphang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNhaphang.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\Frm_HoaDon_rp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\Frm_HoaDon_rp.Designer.cs">
       <DependentUpon>Frm_HoaDon_rp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Frm_NhapHangRp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Frm_NhapHangRp.Designer.cs">
+      <DependentUpon>Frm_NhapHangRp.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DanhMuc\Frm_NhaCungCap_Main.resx">
       <DependentUpon>Frm_NhaCungCap_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\Frm_NhaCungCap_Modifies.resx">
       <DependentUpon>Frm_NhaCungCap_Modifies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Frm_NhapHangRp.resx">
+      <DependentUpon>Frm_NhapHangRp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\HoaDonrp.rdlc" />
     <EmbeddedResource Include="Login\Frm_DangNhap.resx">
@@ -237,15 +254,16 @@
     <EmbeddedResource Include="Report\Frm_HoaDon_rp.resx">
       <DependentUpon>Frm_HoaDon_rp.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSetHoaDon.xsc">
+    <EmbeddedResource Include="Report\NhapHangrp.rdlc" />
+    <None Include="Report\DataSetHoaDon.xsc">
       <DependentUpon>DataSetHoaDon.xsd</DependentUpon>
     </None>
-    <None Include="DataSetHoaDon.xsd">
+    <None Include="Report\DataSetHoaDon.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetHoaDon.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetHoaDon.xss">
+    <None Include="Report\DataSetHoaDon.xss">
       <DependentUpon>DataSetHoaDon.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -258,6 +276,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\DataSetNhaphang.xsc">
+      <DependentUpon>DataSetNhaphang.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSetNhaphang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNhaphang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataSetNhaphang.xss">
+      <DependentUpon>DataSetNhaphang.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

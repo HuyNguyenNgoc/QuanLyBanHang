@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanHang_17SE111.Report;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -207,6 +208,11 @@ namespace QuanLyBanHang_17SE111.QuanLyNhapHang
             }
           
         }
-        
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Frm_NhapHangRp frm_nhaphang = new Frm_NhapHangRp();
+            frm_nhaphang.ShowDialog();
+        }
     }
 }

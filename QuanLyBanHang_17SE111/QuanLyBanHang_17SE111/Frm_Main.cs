@@ -129,5 +129,6 @@ namespace QuanLyBanHang_17SE111
             Frm_KhachHang kh = new Frm_KhachHang();
             kh.ShowDialog();
         }
+
     }
 }
